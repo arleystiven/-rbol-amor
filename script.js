@@ -70,7 +70,7 @@ function getURLParam(name) {
 function showDedicationText() { //seguidores
   let text = getURLParam('text');
   if (!text) {
-    text = `hi good Morning.`;  } else {
+    text = `Mi amor, cada día a tu lado es una aventura, y cada noche un sueño. Eres mi sol y mi estrella, mi calma y mi pasión. Te amo más de lo que las palabras pueden decir". .`;  } else {
     text = decodeURIComponent(text).replace(/\\n/g, '\n');
   }
   const container = document.getElementById('dedication-text');
