@@ -1,8 +1,8 @@
-//© Zero - Código libre no comercial
+//Â© Zero - CÃ³digo libre no comercial
 
 
 // Cargar el SVG y animar los corazones
-fetch('Img/treelove.svg')
+fetch('treelove.svg')
   .then(res => res.text())
   .then(svgText => {
     const container = document.getElementById('tree-container');
@@ -10,7 +10,7 @@ fetch('Img/treelove.svg')
     const svg = container.querySelector('svg');
     if (!svg) return;
 
-    // Animación de "dibujo" para todos los paths
+    // AnimaciÃ³n de "dibujo" para todos los paths
     const allPaths = Array.from(svg.querySelectorAll('path'));
     allPaths.forEach(path => {
       path.style.stroke = '#222';
@@ -34,7 +34,7 @@ fetch('Img/treelove.svg')
         }, 1200 + i * 80);
       });
 
-      // Después de la animación de dibujo, mueve y agranda el SVG
+      // DespuÃ©s de la animaciÃ³n de dibujo, mueve y agranda el SVG
       const totalDuration = 1200 + (allPaths.length - 1) * 80 + 500;
       setTimeout(() => {
         svg.classList.add('move-and-scale');
@@ -45,7 +45,7 @@ fetch('Img/treelove.svg')
           startFloatingObjects();
           // Mostrar cuenta regresiva
           showCountdown();
-          // Iniciar música de fondo
+          // Iniciar mÃºsica de fondo
           playBackgroundMusic();
         }, 1200); //Tiempo para agrandar el SVG
       }, totalDuration);
@@ -61,7 +61,7 @@ fetch('Img/treelove.svg')
     });
   });
 
-// Efecto máquina de escribir para el texto de dedicatoria (seguidores)
+// Efecto mÃ¡quina de escribir para el texto de dedicatoria (seguidores)
 function getURLParam(name) {
   const url = new URL(window.location.href);
   return url.searchParams.get(name);
@@ -70,7 +70,7 @@ function getURLParam(name) {
 function showDedicationText() { //seguidores
   let text = getURLParam('text');
   if (!text) {
-    text = `Para el amor de mi vida:\n\nDesde el primer momento supe que eras tú. Tu sonrisa, tu voz, tu forma de ser… todo en ti me hace sentir en casa.\n\nGracias por acompañarme en cada paso, por entenderme incluso en silencio, y por llenar mis días de amor.\n\nTe amo más de lo que las palabras pueden expresar.`;  } else {
+    text = `Para el amor de mi vida:\n\nDesde el primer momento supe que eras tÃº. Tu sonrisa, tu voz, tu forma de serâ€¦ todo en ti me hace sentir en casa.\n\nGracias por acompaÃ±arme en cada paso, por entenderme incluso en silencio, y por llenar mis dÃ­as de amor.\n\nTe amo mÃ¡s de lo que las palabras pueden expresar.`;  } else {
     text = decodeURIComponent(text).replace(/\\n/g, '\n');
   }
   const container = document.getElementById('dedication-text');
@@ -114,13 +114,13 @@ function startFloatingObjects() {
   function spawn() {
     let el = document.createElement('div');
     el.className = 'floating-petal';
-    // Posición inicial
+    // PosiciÃ³n inicial
     el.style.left = `${Math.random() * 90 + 2}%`;
     el.style.top = `${100 + Math.random() * 10}%`;
     el.style.opacity = 0.7 + Math.random() * 0.3;
     container.appendChild(el);
 
-    // Animación flotante
+    // AnimaciÃ³n flotante
     const duration = 6000 + Math.random() * 4000;
     const drift = (Math.random() - 0.5) * 60;
     setTimeout(() => {
@@ -129,12 +129,12 @@ function startFloatingObjects() {
       el.style.opacity = 0.2;
     }, 30);
 
-    // Eliminar después de animar
+    // Eliminar despuÃ©s de animar
     setTimeout(() => {
       if (el.parentNode) el.parentNode.removeChild(el);
     }, duration + 2000);
 
-    // Generar más objetos
+    // Generar mÃ¡s objetos
     if (count++ < 32) setTimeout(spawn, 350 + Math.random() * 500);
     else setTimeout(spawn, 1200 + Math.random() * 1200);
   }
@@ -160,7 +160,7 @@ function showCountdown() {
     let eventSeconds = Math.max(0, Math.floor((eventDiff / 1000) % 60));
 
     container.innerHTML =
-      `Llevamos juntos: <b>${days}</b> días<br>` +
+      `Llevamos juntos: <b>${days}</b> dÃ­as<br>` +
       `Nuestro aniversario: <b>${eventDays}d ${eventHours}h ${eventMinutes}m ${eventSeconds}s</b>`;
     container.classList.add('visible');
   }
@@ -168,7 +168,7 @@ function showCountdown() {
   setInterval(update, 1000);
 }
 
-// --- Música de fondo ---
+// --- MÃºsica de fondo ---
 function playBackgroundMusic() {
   const audio = document.getElementById('bg-music');
   if (!audio) return;
@@ -176,7 +176,7 @@ function playBackgroundMusic() {
   if (!btn) {
     btn = document.createElement('button');
     btn.id = 'music-btn';
-    btn.textContent = '🔊 Música';
+    btn.textContent = 'ðŸ”Š MÃºsica';
     btn.style.position = 'fixed';
     btn.style.bottom = '18px';
     btn.style.right = '18px';
@@ -193,23 +193,23 @@ function playBackgroundMusic() {
   audio.loop = true;
   // Intentar reproducir inmediatamente
   audio.play().then(() => {
-    btn.textContent = '🔊 Música';
+    btn.textContent = 'ðŸ”Š MÃºsica';
   }).catch(() => {
-    // Si falla el autoplay, esperar click en el botón
-    btn.textContent = '▶️ Música';
+    // Si falla el autoplay, esperar click en el botÃ³n
+    btn.textContent = 'â–¶ï¸ MÃºsica';
   });
   btn.onclick = () => {
     if (audio.paused) {
       audio.play();
-      btn.textContent = '🔊 Música';
+      btn.textContent = 'ðŸ”Š MÃºsica';
     } else {
       audio.pause();
-      btn.textContent = '🔈 Música';
+      btn.textContent = 'ðŸ”ˆ MÃºsica';
     }
   };
 }
 
-// Intentar reproducir la música lo antes posible (al cargar la página)
+// Intentar reproducir la mÃºsica lo antes posible (al cargar la pÃ¡gina)
 window.addEventListener('DOMContentLoaded', () => {
   playBackgroundMusic();
 });
