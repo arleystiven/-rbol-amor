@@ -70,7 +70,7 @@ function getURLParam(name) {
 function showDedicationText() { //seguidores
   let text = getURLParam('text');
   if (!text) {
-    text = `Para el amor de mi vida:\n\nDesde el primer momento supe que eras tÃº. Tu sonrisa, tu voz, tu forma de serâ€¦ todo en ti me hace sentir en casa.\n\nGracias por acompaÃ±arme en cada paso, por entenderme incluso en silencio, y por llenar mis dÃ­as de amor.\n\nTe amo mÃ¡s de lo que las palabras pueden expresar.`;  } else {
+    text = `hi good Morning.`;  } else {
     text = decodeURIComponent(text).replace(/\\n/g, '\n');
   }
   const container = document.getElementById('dedication-text');
